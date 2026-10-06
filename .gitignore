@@ -1,0 +1,29 @@
+# Raw measurements stay out of git and are never overwritten.
+data/raw/*
+!data/raw/.gitkeep
+
+# Simulation outputs.
+runs/*
+!runs/.gitkeep
+
+# Python build and bytecode.
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Caches.
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.cache/
+
+# Virtual environments.
+.venv/
+venv/
+env/
+ENV/
