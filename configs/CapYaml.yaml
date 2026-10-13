@@ -1,0 +1,24 @@
+# Capture settings. Edit, save, then run:  python scripts/capture_yaml.py
+#
+# The three captures for this session (change only these lines between runs):
+#   1. Water reference:  name: water_ref       exposure_us: 881    frames: 20  dark: false
+#   2. Dark frame:       name: dark_881us      exposure_us: 881    frames: 20  dark: true
+#   3. Overexposed x100: name: water_ref_x100  exposure_us: 88100  frames: 10  dark: false
+
+name: water_ref_base_10x        # short label, no spaces; becomes part of the filename
+exposure_us: 13604.35        # exposure time in microseconds
+frames: 20               # number of frames in the stack
+dark: false             # true = script asks you to block the beam first
+
+pixel_format: Mono12     # Mono12 for data (0-4095); Mono8 only for quick tests
+black_level: null        # a number to set BlackLevel, or null to leave it as is
+
+# Record-keeping (goes into the JSON sidecar and data/lab_log.csv)
+sample: water            # water, skim, whole
+concentration: ""        # e.g. "2 drops" or "0.05% v/v"
+rod_depth_mm: ""         # rod depth z0, blank if no rod
+mode: reference          # reference, scan, wide-field, a1, a2, speckle
+nd_filters: "ND3 + ND1.5"
+iris_mm: 7
+temperature_C: 25
+notes: "tank tilted, lens f=50 mm at ~300 mm"

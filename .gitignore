@@ -1,6 +1,9 @@
-# Raw measurements stay out of git and are never overwritten.
+# Later raw sessions stay out of git. The 2026-10-07 water-reference
+# stacks are tracked; each TIFF is stored with Git LFS.
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/20261007/
+!data/raw/20261007/**
 
 # Simulation outputs.
 runs/*

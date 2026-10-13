@@ -1,0 +1,36 @@
+{
+  "config_file": "configs/CapYaml.yaml",
+  "config": {
+    "name": "water_ref",
+    "exposure_us": 1360.435,
+    "frames": 20,
+    "dark": false,
+    "pixel_format": "Mono12",
+    "black_level": null,
+    "sample": "water",
+    "concentration": "",
+    "rod_depth_mm": "",
+    "mode": "reference",
+    "nd_filters": "ND3 + ND1.5",
+    "iris_mm": 7,
+    "temperature_C": 25,
+    "notes": "tank tilted, lens f=50 mm at ~300 mm"
+  },
+  "camera": {
+    "model": "1800 U-500m",
+    "serial": "05H1L",
+    "pixel_format": "Mono12",
+    "exposure_us_actual": 1372.367,
+    "gain_db": 0.0,
+    "black_level": 0.0,
+    "device_temperature_C": 42.2
+  },
+  "timestamp": "2026-10-07T16:32:25",
+  "peak_counts": 2462,
+  "full_scale": 4095,
+  "saturated_fraction": 0.0,
+  "peak_position_xy": [
+    1170,
+    1015
+  ]
+}
