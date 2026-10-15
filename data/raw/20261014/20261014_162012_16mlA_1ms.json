@@ -1,0 +1,50 @@
+{
+  "config_file": "configs/CapYaml.yaml",
+  "config": {
+    "name": "16mlA_1ms",
+    "exposure_us": 1501.8,
+    "frames": 15,
+    "dark": false,
+    "pixel_format": "Mono12",
+    "save": "mean",
+    "save_std": true,
+    "compress": true,
+    "roi": null,
+    "black_level": null,
+    "sample": "whole",
+    "concentration": "8.30e-6",
+    "rod_depth_mm": "",
+    "mode": "pilot",
+    "nd_filters": "ND3-A + ND1.5-A",
+    "iris_mm": 7,
+    "temperature_C": 24,
+    "notes": "step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+  },
+  "camera": {
+    "model": "1800 U-500m",
+    "serial": "05H1L",
+    "pixel_format": "Mono12",
+    "exposure_us_actual": 1501.836,
+    "gain_db": 0.0,
+    "black_level": 0.0,
+    "device_temperature_C": 46.5
+  },
+  "timestamp": "2026-10-14T16:20:12",
+  "files": {
+    "mean": "20261014_162012_16mlA_1ms_mean.tif",
+    "std": "20261014_162012_16mlA_1ms_std.tif"
+  },
+  "frames_averaged": 15,
+  "roi_xywh": null,
+  "image_shape": [
+    1944,
+    2592
+  ],
+  "peak_counts": 3036,
+  "full_scale": 4095,
+  "saturated_fraction": 0.0,
+  "peak_position_xy_full_frame": [
+    1302,
+    1054
+  ]
+}

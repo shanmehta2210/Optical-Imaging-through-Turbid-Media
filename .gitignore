@@ -1,9 +1,11 @@
-# Later raw sessions stay out of git. The 2026-10-07 water-reference
-# stacks are tracked; each TIFF is stored with Git LFS.
+# Later raw sessions stay out of git. Tracked dates are stored as-is;
+# each TIFF under data/raw goes through Git LFS.
 data/raw/*
 !data/raw/.gitkeep
 !data/raw/20261007/
 !data/raw/20261007/**
+!data/raw/20261014/
+!data/raw/20261014/**
 
 # Simulation outputs.
 runs/*
