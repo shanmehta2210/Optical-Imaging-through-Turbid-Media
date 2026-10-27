@@ -3,3 +3,55 @@ date,time,filename,name,sample,concentration,rod_depth_mm,mode,exposure_us,frame
 2026-10-07,16:34:01,20261007_163401_water_ref_base_dark.tif,water_ref_base_dark,water,,,reference,1360.435,20,ND3 + ND1.5,7,25,133,0.000000,True,"tank tilted, lens f=50 mm at ~300 mm"
 2026-10-07,16:48:51,20261007_164851_water_ref_base_100x.tif,water_ref_base_100x,water,,,reference,136043.5,20,ND3 + ND1.5,7,25,4095,0.002099,False,"tank tilted, lens f=50 mm at ~300 mm"
 2026-10-07,16:49:19,20261007_164919_water_ref_base_10x.tif,water_ref_base_10x,water,,,reference,13604.35,20,ND3 + ND1.5,7,25,4095,0.000931,False,"tank tilted, lens f=50 mm at ~300 mm"
+2026-10-14,14:54:32,20261014_145432_pilot_whole_s01_e001ms.tif,pilot_whole_s01_e001ms,whole,8.30e-6,,pilot,997.652,15,ND3-A + ND1.5-A,7,24,2516,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,15:07:42,20261014_150742_pilot_whole_s01_e001ms_mean.tif,pilot_whole_s01_e001ms,whole,8.30e-6,,pilot,100001,15,ND3-A + ND1.5-A,7,24,3087,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,15:18:50,20261014_151850_pilot_whole_s01_e001ms_mean.tif,pilot_whole_s01_e001ms,whole,8.30e-6,,pilot,499981,15,ND3-A + ND1.5-A,7,24,3394,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,15:19:54,20261014_151954_pilot_whole_s01_e001ms_mean.tif,pilot_whole_s01_e001ms,whole,8.30e-6,,pilot,499981,15,ND3-A + ND1.5-A,7,24,3003,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,15:22:50,20261014_152250_pilot_whole_s01_e001ms_mean.tif,pilot_whole_s01_e001ms,whole,8.30e-6,,pilot,499981,15,ND3-A + ND1.5-A,7,24,4095,0.994191,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:09:36,20261014_160936_2mlA_1ms_mean.tif,2mlA_1ms,whole,8.30e-6,,pilot,1009.9,15,ND3-A + ND1.5-A,7,24,2639,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:13:03,20261014_161303_4mlA_1ms_mean.tif,4mlA_1ms,whole,8.30e-6,,pilot,1009.9,15,ND3-A + ND1.5-A,7,24,2542,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:17:21,20261014_161721_8mlA_1ms_mean.tif,8mlA_1ms,whole,8.30e-6,,pilot,1501.8,15,ND3-A + ND1.5-A,7,24,3433,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:20:12,20261014_162012_16mlA_1ms_mean.tif,16mlA_1ms,whole,8.30e-6,,pilot,1501.8,15,ND3-A + ND1.5-A,7,24,3036,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:23:12,20261014_162312_32mlA_1ms_mean.tif,32mlA_1ms,whole,8.30e-6,,pilot,2511.7,15,ND3-A + ND1.5-A,7,24,3567,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:26:09,20261014_162609_64mlA_5ms_mean.tif,64mlA_5ms,whole,8.30e-6,,pilot,4997.5,15,ND3-A + ND1.5-A,7,24,3809,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:37:31,20261014_163731_128mlA_5ms_mean.tif,128mlA_5ms,whole,8.30e-6,,pilot,14992.5,15,ND3-A + ND1.5-A,7,24,3497,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:45:29,20261014_164529_256mlA_5ms_mean.tif,256mlA_5ms,whole,8.30e-6,,pilot,150002.3,15,ND3-A + ND1.5-A,7,24,3455,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:51:11,20261014_165111_512mlA_5ms_mean.tif,512mlA_5ms,whole,8.30e-6,,pilot,150002.3,15,ND3-A + ND1.5-A,7,24,1558,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:54:18,20261014_165418_512mlA_5ms_3.5ND_mean.tif,512mlA_5ms_3.5ND,whole,8.30e-6,,pilot,1696833.82,15,ND3-A + ND1.5-A,7,24,4095,0.331397,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-14,16:55:17,20261014_165517_512mlA_5ms_3.5ND_mean.tif,512mlA_5ms_3.5ND,whole,8.30e-6,,pilot,1696833.82,15,ND3-A + ND1.5-A,7,24,4095,0.000000,False,"step 1, 0.02 mL milk, V=2410 mL, 60 s after stir"
+2026-10-27,15:19:13,20261027_151913_ref_fp_water_e001ms_mean.tif,ref_fp_water_e001ms,whole,0,,a1,50,15,5.75,7,24,2561,0.000000,False,reference ater measurement
+2026-10-27,15:32:10,20261027_153210_A1_e100us_mean.tif,A1_e100us,whole,8.36e-6,,a1,50,15,5.75,7,24,2516,0.000000,False,reference ater measurement
+2026-10-27,15:34:48,20261027_153448_A1_4mlstockA_mean.tif,A1_4mlstockA,whole,1.66e-5,,a1,50,15,5.75,7,24,2190,0.000000,False,4mlstockA
+2026-10-27,15:37:03,20261027_153703_A1_8mlstockA_mean.tif,A1_8mlstockA,whole,3.31e-5,,a1,100,15,5.75,7,24,3374,0.000000,False,
+2026-10-27,15:38:45,20261027_153845_A1_16mlstockA_mean.tif,A1_16mlstockA,whole,6.62e-5,,a1,100,15,5.75,7,24,2722,0.000000,False,
+2026-10-27,15:41:35,20261027_154135_A1_32mlstockA_mean.tif,A1_32mlstockA,whole,1.31e-4,,a1,155,15,5.75,7,24,2754,0.000000,False,
+2026-10-27,15:44:30,20261027_154430_A1_64mlstockA_mean.tif,A1_64mlstockA,whole,2.62e-4,,a1,310,15,5.75,7,24,2617,0.000000,False,
+2026-10-27,15:48:44,20261027_154844_A1_128mlstockA_mean.tif,A1_128mlstockA,whole,5.24e-4,,a1,1000,15,5.75,7,24,2867,0.000000,False,
+2026-10-27,15:51:36,20261027_155136_A1_189mlstockA_mean.tif,A1_189mlstockA,whole,7.73e-4,,a1,3000,15,5.75,7,24,3161,0.000000,False,
+2026-10-27,16:02:40,20261027_160240_A2_189mlstockA_mean.tif,A2_189mlstockA,whole,7.73e-4,,a1,40000,15,5.75,7,24,3934,0.000000,False,
+2026-10-27,16:15:45,20261027_161545_A2_4.6mlstockA_mean.tif,A2_4.6mlstockA,whole,calculate it,,a1,1000,15,1.75,7,24,2121,0.000000,False,
+2026-10-27,16:27:11,20261027_162711_A2_1000mlstockA_mean.tif,A2_1000mlstockA,whole,calculate it,,a1,1000,15,1.75,7,24,141,0.000000,False,
+2026-10-27,16:31:10,20261027_163110_A2_1000mlstockA_noND_x1_mean.tif,A2_1000mlstockA_noND_x1,whole,calculate it,,a1,50000,15,0,7,24,866,0.000000,False,
+2026-10-27,16:31:29,20261027_163129_A2_1000mlstockA_noND_x1_mean.tif,A2_1000mlstockA_noND_x1,whole,calculate it,,a1,500000,15,0,7,24,4095,0.000322,False,
+2026-10-27,16:32:14,20261027_163214_A2_1000mlstockA_noND_x1_mean.tif,A2_1000mlstockA_noND_x1,whole,calculate it,,a1,1696833,15,0,7,24,4095,0.066637,False,
+2026-10-27,16:36:48,20261027_163648_A2_1720mlstockA_noND_x1_mean.tif,A2_1720mlstockA_noND_x1,whole,calculate it,,a1,50000,15,0,7,24,764,0.000000,False,
+2026-10-27,16:37:38,20261027_163738_A2_1720mlstockA_noND_x20_mean.tif,A2_1720mlstockA_noND_x20,whole,calculate it,,a1,1000000,15,0,7,24,3354,0.000000,False,
+2026-10-27,16:38:19,20261027_163819_A2_1720mlstockA_noND_xcap_mean.tif,A2_1720mlstockA_noND_xcap,whole,calculate it,,a1,1696833,15,0,7,24,3792,0.000000,False,
+2026-10-27,16:46:38,20261027_164638_A2_2400mlstockA_noND_x1_mean.tif,A2_2400mlstockA_noND_x1,whole,calculate it,,a1,100000,15,0,7,24,1127,0.000000,False,
+2026-10-27,16:46:51,20261027_164651_A2_2400mlstockA_noND_x1_mean.tif,A2_2400mlstockA_noND_x1,whole,calculate it,,a1,100000,15,0,7,24,1143,0.000000,False,
+2026-10-27,16:47:46,20261027_164746_A2_2400mlstockA_noND_xcap_mean.tif,A2_2400mlstockA_noND_xcap,whole,calculate it,,a1,1696833,15,0,7,24,3591,0.000000,False,
+2026-10-27,16:48:29,20261027_164829_A2_2400mlstockA_noND_xcap_mean.tif,A2_2400mlstockA_noND_xcap,whole,calculate it,,a1,1696833,15,0,7,24,3558,0.000000,False,
+2026-10-27,16:50:22,20261027_165022_A2_2400mlstockA_noND_x10_mean.tif,A2_2400mlstockA_noND_x10,whole,calculate it,,a1,1000000,15,0,7,24,3039,0.000000,False,
+2026-10-27,16:57:19,20261027_165719_Dark_50us_mean.tif,Dark_50us,whole,calculate it,,a1,50,15,nil,7,24,133,0.000000,True,
+2026-10-27,16:57:44,20261027_165744_Dark_100us_mean.tif,Dark_100us,whole,calculate it,,a1,100,15,nil,7,24,129,0.000000,True,
+2026-10-27,16:58:10,20261027_165810_Dark_155us_mean.tif,Dark_155us,whole,calculate it,,a1,155,15,nil,7,24,129,0.000000,True,
+2026-10-27,16:58:43,20261027_165843_Dark_1009us_mean.tif,Dark_1009us,whole,calculate it,,a1,1009.9,15,nil,7,24,129,0.000000,True,
+2026-10-27,16:59:16,20261027_165916_Dark_1501us_mean.tif,Dark_1501us,whole,calculate it,,a1,1501,15,nil,7,24,129,0.000000,True,
+2026-10-27,16:59:39,20261027_165939_Dark_2511us_mean.tif,Dark_2511us,whole,calculate it,,a1,2511,15,nil,7,24,133,0.000000,True,
+2026-10-27,17:00:05,20261027_170005_Dark_4997us_mean.tif,Dark_4997us,whole,calculate it,,a1,4997,15,nil,7,24,185,0.000000,True,
+2026-10-27,17:00:35,20261027_170035_Dark_14992us_mean.tif,Dark_14992us,whole,calculate it,,a1,14992,15,nil,7,24,291,0.000000,True,
+2026-10-27,17:00:57,20261027_170057_Dark_150002us_mean.tif,Dark_150002us,whole,calculate it,,a1,150002,15,nil,7,24,1385,0.000000,True,
+2026-10-27,17:01:25,20261027_170125_Dark_1696833.82us_mean.tif,Dark_1696833.82us,whole,calculate it,,a1,1696833.82,15,nil,7,24,3188,0.000000,True,
+2026-10-27,17:03:12,20261027_170312_Dark_50000us_mean.tif,Dark_50000us,whole,calculate it,,a1,50000,15,nil,7,24,723,0.000000,True,
+2026-10-27,17:03:28,20261027_170328_Dark_500000us_mean.tif,Dark_500000us,whole,calculate it,,a1,500000,15,nil,7,24,2492,0.000000,True,
+2026-10-27,17:04:05,20261027_170405_Dark_1000000us_mean.tif,Dark_1000000us,whole,calculate it,,a1,1000000,15,nil,7,24,2822,0.000000,True,

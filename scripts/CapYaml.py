@@ -1,13 +1,16 @@
 """Capture a stack of frames using settings from a YAML file.
 
 Usage (from the project root):
-    python scripts/capture_yaml.py                      # uses configs/capture.yaml
-    python scripts/capture_yaml.py configs/other.yaml   # any other settings file
+    python scripts/CapYaml.py                      # uses configs/CapYaml.yaml
+    python scripts/CapYaml.py configs/pilot.yaml   # any other settings file
 
-Edit the YAML, run, repeat. Each run saves:
-    data/raw/YYYYMMDD/<timestamp>_<name>.tif   uint16 stack (frames, H, W)
-    data/raw/YYYYMMDD/<timestamp>_<name>.json  camera settings + your YAML
-and appends one row to data/lab_log.csv.
+Edit the YAML, run, repeat. Each run saves, in data/raw/YYYYMMDD/:
+    <timestamp>_<name>_mean.tif   float32 average of all frames   (save: mean or both)
+    <timestamp>_<name>_std.tif    float32 per-pixel std deviation (if save_std: true)
+    <timestamp>_<name>_stack.tif  uint16 raw frames               (save: stack or both)
+    <timestamp>_<name>.json       camera settings + your YAML
+Files are losslessly zlib-compressed if compress: true; roi crops them.
+Each run also appends one row to data/lab_log.csv.
 Close the camera in Vimba X Viewer before running.
 """
 import csv
@@ -43,7 +46,38 @@ def load_config(path):
         sys.exit(f"Config {path} is missing: {', '.join(missing)}")
     cfg.setdefault("pixel_format", "Mono12")
     cfg.setdefault("dark", False)
+    cfg.setdefault("save", "mean")
+    cfg.setdefault("save_std", True)
+    cfg.setdefault("compress", True)
+    cfg.setdefault("roi", None)
+    if cfg["save"] not in ("mean", "stack", "both"):
+        sys.exit(f"save must be mean, stack or both (got {cfg['save']!r})")
+    if cfg["roi"] is not None and len(cfg["roi"]) != 4:
+        sys.exit("roi must be [x, y, width, height] in pixels, or null")
     return cfg
+
+
+def crop(arr, roi):
+    """Software crop to [x, y, width, height]; works on images and stacks."""
+    if roi is None:
+        return arr
+    x, y, w, h = (int(v) for v in roi)
+    return arr[..., y:y + h, x:x + w]
+
+
+def write_tif(path, data, compress):
+    """Write a TIFF, losslessly zlib-compressed if asked. Falls back to uncompressed."""
+    if compress:
+        # the differencing predictor helps integer data and needs no extra packages;
+        # float data is compressed without it (its predictor needs 'imagecodecs')
+        kw = {"compression": "zlib", "predictor": np.issubdtype(data.dtype, np.integer)}
+        try:
+            tifffile.imwrite(path, data, **kw)
+            return path.stat().st_size
+        except Exception as err:
+            print(f"  note: compression failed ({err}); saving uncompressed")
+    tifffile.imwrite(path, data)
+    return path.stat().st_size
 
 
 def try_set(cam, name, value, quiet=False):
@@ -170,17 +204,38 @@ def main():
 
     stack = np.stack(frames).astype(np.uint16)
     full = FULL_SCALE.get(cfg["pixel_format"], int(stack.max()))
-    peak = int(stack.max())
+    peak = int(stack.max())                      # checked on the raw frames, before any averaging
     sat = float(np.mean(stack >= full))
-    mean_img = stack.mean(axis=0)
-    py, px = np.unravel_index(np.argmax(mean_img), mean_img.shape)
+    mean_full = stack.mean(axis=0)
+    py, px = np.unravel_index(np.argmax(mean_full), mean_full.shape)
 
-    tifffile.imwrite(out, stack)
+    stack = crop(stack, cfg["roi"])
+    base = out_dir / f"{now.strftime('%Y%m%d_%H%M%S')}_{cfg['name']}"
+    saved = {}
+    if cfg["save"] in ("mean", "both"):
+        mean_img = stack.mean(axis=0, dtype=np.float64).astype(np.float32)
+        saved["mean"] = base.with_name(base.name + "_mean.tif")
+        size = write_tif(saved["mean"], mean_img, cfg["compress"])
+        print(f"  mean image: {size / 1e6:.1f} MB")
+        if cfg["save_std"] and stack.shape[0] > 1:
+            std_img = stack.std(axis=0, ddof=1, dtype=np.float64).astype(np.float32)
+            saved["std"] = base.with_name(base.name + "_std.tif")
+            size = write_tif(saved["std"], std_img, cfg["compress"])
+            print(f"  std image:  {size / 1e6:.1f} MB")
+    if cfg["save"] in ("stack", "both"):
+        saved["stack"] = base.with_name(base.name + "_stack.tif")
+        size = write_tif(saved["stack"], stack, cfg["compress"])
+        print(f"  raw stack:  {size / 1e6:.1f} MB")
+    out = saved.get("mean", saved.get("stack"))
+
     meta = {"config_file": str(cfg_path), "config": cfg, "camera": settings,
             "timestamp": now.isoformat(timespec="seconds"),
+            "files": {k: v.name for k, v in saved.items()},
+            "frames_averaged": int(stack.shape[0]),
+            "roi_xywh": cfg["roi"], "image_shape": list(stack.shape[1:]),
             "peak_counts": peak, "full_scale": full, "saturated_fraction": sat,
-            "peak_position_xy": [int(px), int(py)]}
-    out.with_suffix(".json").write_text(json.dumps(meta, indent=2, default=str))
+            "peak_position_xy_full_frame": [int(px), int(py)]}
+    base.with_suffix(".json").write_text(json.dumps(meta, indent=2, default=str))
 
     log = LOG
     if log.exists():
@@ -202,7 +257,7 @@ def main():
                     cfg.get("notes", "")])
 
     print(f"Saved {out}")
-    print(f"  stack {stack.shape}, peak {peak}/{full} ({100 * peak / full:.0f}% of full scale), "
+    print(f"  {stack.shape[0]} frames of {stack.shape[1]}x{stack.shape[2]}, peak {peak}/{full} ({100 * peak / full:.0f}% of full scale), "
           f"mean {stack.mean():.1f}, brightest pixel at x={px}, y={py}")
     if sat > 0 and not cfg["dark"]:
         print(f"  WARNING: {100 * sat:.4f}% of pixels saturated. Shorten exposure or add ND.")

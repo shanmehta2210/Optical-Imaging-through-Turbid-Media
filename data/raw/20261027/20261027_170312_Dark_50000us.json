@@ -1,0 +1,50 @@
+{
+  "config_file": "configs/CapYaml.yaml",
+  "config": {
+    "name": "Dark_50000us",
+    "exposure_us": 50000,
+    "frames": 15,
+    "dark": true,
+    "pixel_format": "Mono12",
+    "save": "mean",
+    "save_std": true,
+    "compress": true,
+    "roi": null,
+    "black_level": null,
+    "sample": "whole",
+    "concentration": "calculate it",
+    "rod_depth_mm": "",
+    "mode": "a1",
+    "nd_filters": "nil",
+    "iris_mm": 7,
+    "temperature_C": 24,
+    "notes": ""
+  },
+  "camera": {
+    "model": "1800 U-500m",
+    "serial": "05H1L",
+    "pixel_format": "Mono12",
+    "exposure_us_actual": 50000.773,
+    "gain_db": 0.0,
+    "black_level": 0.0,
+    "device_temperature_C": 42.7
+  },
+  "timestamp": "2026-10-27T17:03:12",
+  "files": {
+    "mean": "20261027_170312_Dark_50000us_mean.tif",
+    "std": "20261027_170312_Dark_50000us_std.tif"
+  },
+  "frames_averaged": 15,
+  "roi_xywh": null,
+  "image_shape": [
+    1944,
+    2592
+  ],
+  "peak_counts": 723,
+  "full_scale": 4095,
+  "saturated_fraction": 0.0,
+  "peak_position_xy_full_frame": [
+    257,
+    1445
+  ]
+}
