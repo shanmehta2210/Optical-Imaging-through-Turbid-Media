@@ -2,10 +2,10 @@
 # Run with:  python scripts/CapYaml.py configs/a1.yaml
 # Exposure ladder (ms): 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000 -> exposure_us = ms x 1000
 
-name: Dark_1000000us  
-exposure_us: 1000000         # EDIT: ladder value giving a peak of 30-80%
+name: NDcheck_air_4.75  
+exposure_us: 100         # EDIT: ladder value giving a peak of 30-80%
 frames: 15
-dark: true
+dark: false
 
 pixel_format: Mono12
 save: mean
@@ -15,10 +15,10 @@ roi: null
 black_level: null
 
 sample: whole                  # use "water" for the water reference and stir checks
-concentration: "calculate it"             # EDIT: volume fraction from the A1 table
+concentration: "nil"             # EDIT: volume fraction from the A1 table
 rod_depth_mm: ""
 mode: a1
 nd_filters: "nil"   # set once, then leave alone for all of A1
 iris_mm: 7
 temperature_C: 24
-notes: ""   # EDIT: e.g. "focal plane, A1-3, 0.08 mL milk, V=2416 mL, 60 s after stir"
+notes: "no tank"   # EDIT: e.g. "focal plane, A1-3, 0.08 mL milk, V=2416 mL, 60 s after stir"

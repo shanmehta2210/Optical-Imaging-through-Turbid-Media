@@ -1,0 +1,11 @@
+timestamp,label_mL_stockA,milk_mL,c,exposure_ms,dark_subtracted_counts_per_us_per_px,radiance_per_unit_power_mm2_sr,mus_prime_diffusion_P1_per_mm,mus_prime_diffusion_lambertian_per_mm,note
+# mus_prime uses the measured ND stack OD 6.081 (28 Oct ND check), not the nominal 5.75
+20261027_163110,1000,10,4.149e-3,50,1.636e-3,4.004e-06,,,at the diffusion model's ceiling (L/l* ~1; not diffuse; not used)
+20261027_163129,1000,10,4.149e-3,500,1.634e-3,3.999e-06,,,core saturated; annulus used
+20261027_163214,1000,10,4.149e-3,1696.8,1.709e-3,4.181e-06,,,core saturated; annulus used
+20261027_163648,1720,17.2,7.116e-3,50,5.813e-4,1.423e-06,0.0086,0.0106,step mean used for fit; frames scatter +-25%
+20261027_163738,1720,17.2,7.116e-3,1000,8.448e-4,2.067e-06,0.0086,0.0106,
+20261027_163819,1720,17.2,7.116e-3,1696.8,5.315e-4,1.302e-06,0.0086,0.0106,
+20261027_164638,2400,24,9.901e-3,100,2.667e-4,6.533e-07,0.0183,0.0198,dark interpolated 50-150 ms
+20261027_164746,2400,24,9.901e-3,1696.8,3.923e-4,9.613e-07,0.0183,0.0198,
+20261027_165022,2400,24,9.901e-3,1000,3.591e-4,8.773e-07,0.0183,0.0198,
