@@ -2,9 +2,9 @@
 # Run with:  python scripts/CapYaml.py configs/a1.yaml
 # Exposure ladder (ms): 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000 -> exposure_us = ms x 1000
 
-name: NDcheck_air_4.75  
-exposure_us: 100         # EDIT: ladder value giving a peak of 30-80%
-frames: 15
+name: 94mlB_0_exf18cm_cent
+exposure_us: 500000         # EDIT: ladder value giving a peak of 30-80%
+frames: 20
 dark: false
 
 pixel_format: Mono12

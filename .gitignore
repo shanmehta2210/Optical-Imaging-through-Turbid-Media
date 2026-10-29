@@ -10,6 +10,8 @@ data/raw/*
 !data/raw/20261027/**
 !data/raw/20261028/
 !data/raw/20261028/**
+!data/raw/20261029/
+!data/raw/20261029/**
 
 # Simulation outputs.
 runs/*

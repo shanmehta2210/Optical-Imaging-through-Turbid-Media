@@ -1,0 +1,18 @@
+timestamp,stockB_mL,milk_mL,label_distance_from_exit_cm,exposure_us_actual,saturated_fraction,total_counts_per_us,shadow_contrast,band_min_shift_px,note
+# stock B = 10% milk; label distances are nominal and need correcting (user); 18 and 20.5 cm frames are near-identical (speckle corr 0.92-0.96), rod probably did not move between them
+# contrast = 1 - band minimum / mean of shoulders 300-450 px either side, across the band at 43 deg; right shoulder clipped where saturated_fraction > 0
+# the ND reference 20261029_145947 (label 4.75, assumed stack 2+1+1.5+0.25 = 5.254 measured) gives tau ~4.2 vs air on 28 Oct; 1.4 mL milk in 2400 mL predicts ~3.6 incl. tank losses
+20261029_152004,14,1.4,1,9994.976,0.04405,3.696e+05,0.883,0,
+20261029_152617,14,1.4,2,9994.976,0.03960,3.575e+05,0.836,-10,
+20261029_152655,14,1.4,4,9994.976,0.03215,3.34e+05,0.766,-10,
+20261029_152801,14,1.4,8,9994.976,0.01535,2.612e+05,0.597,-30,
+20261029_152849,14,1.4,13,9994.976,0.00597,1.838e+05,0.337,-100,
+20261029_152931,14,1.4,18,9994.976,0.00025,5.041e+04,0.022,-460,no shadow band
+20261029_153141,14,1.4,20.5,9994.976,0.00025,4.807e+04,0.031,-460,no shadow band
+20261029_153510,21,2.1,20.5,9994.976,0.00000,2.633e+04,0.029,-250,no shadow band; config asked 15000 us, camera ran 9995 us
+20261029_153709,21,2.1,18,14992.464,0.00000,2.523e+04,0.011,-410,no shadow band
+20261029_153738,21,2.1,13,14992.464,0.00012,9.547e+04,0.210,-100,
+20261029_153823,21,2.1,8,14992.464,0.00060,1.472e+05,0.439,-30,
+20261029_153839,21,2.1,4,14992.464,0.00500,1.824e+05,0.659,-10,
+20261029_153858,21,2.1,2,14992.464,0.00167,1.645e+05,0.778,60,
+20261029_153918,21,2.1,1,14992.464,0.00633,1.825e+05,0.838,30,
